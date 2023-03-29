@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="sx">
+    <div *ngFor="let dog of dogs">
+      <mat-card class="example-card example-card-color">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div class="circle" [ngStyle]="{'background-color': dog.online ? 'green':'red'}"><p>Connected</p></div>
+            <div mat-card-avatar>
+              <img class="example-header-image" mat-card-avatar src="{{dog.avatar}}" alt="Dog avatar">
+            </div>
+            <mat-card-title><a routerLink="{{dog.id}}">{{dog.name}}</a></mat-card-title>
+          </mat-card-header>
+        </mat-card>
+      </mat-card>
+    </div>
+  </div>
+  <div class="dx">
+    <router-outlet></router-outlet>
+  </div>
+</div>

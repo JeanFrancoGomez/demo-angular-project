@@ -1,0 +1,26 @@
+<form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Dog name</mat-label>
+    <input matInput type="text" formControlName="dogName">
+  </mat-form-field>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Dog breed</mat-label>
+      <input matInput type="text" formControlName="dogBreed">
+    </mat-form-field>
+    <p *ngIf="!homeForm.get('dogBreed').valid && !homeForm.get('dogBreed').untouched">Insert a name of at list three
+      letters</p>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select formControlName="crossOrPure">
+      <mat-option value="cross">Cross breed</mat-option>
+      <mat-option value="pure">Pure breed</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput type="text" formControlName="description"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!homeForm.valid">Submit</button>
+</form>

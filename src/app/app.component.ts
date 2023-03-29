@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {interval, Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
